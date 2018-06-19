@@ -1,0 +1,284 @@
+﻿@model CSCAssignment.Models.StripeChargeModel
+
+@{
+                /**/
+
+                ViewBag.Title = "Stripe Tutorial";
+}
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+.loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+.loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+.loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+</style>
+<h2>Stripe Charge Example with Stripe.js</h2>
+
+<div>
+    <h4>Stripe Charge</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label for="txtCardNumber">Card Number *</label>
+        </dt>
+
+        <dd>
+            <input type="text" id="txtCardNumber" placeholder="Card Number e.g 1234..." />
+        </dd>
+
+        <dt>
+            <label for="txtCvc">Cvc *</label>
+        </dt>
+
+        <dd>
+            <input type="text" id="txtCvc" placeholder="Security Code e.g 987" />
+        </dd>
+
+        <dt>
+            <label for="txtExpiryMonth">Expiry Month (MM) *</label>
+        </dt>
+
+        <dd>
+            <input type="text" id="txtExpiryMonth" placeholder="01" />
+        </dd>
+
+        <dt>
+            <label for="txtExpiryYear">Expiry Year (YYYY) *</label>)
+        </dt>
+
+        <dd>
+            <input type="text" id="txtExpiryYear" placeholder="2018" />
+        </dd>
+    </dl>
+</div>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+
+</div>
+@using (Html.BeginForm("Charge", "Stripe", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "frmCharge" }))
+{
+    @Html.AntiForgeryToken()
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CardHolderName)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.CardHolderName, new { id = "txtCardHolderName" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.Amount, new { id = "txtAmount" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine1)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.AddressLine1, new { id = "txtAddress1" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine2)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.AddressLine2, new { id = "txtAddress2" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressCity)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.AddressCity, new { id = "txtCity" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressPostcode)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.AddressPostcode, new { id = "txtPostcode" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressCountry)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.AddressCountry, new { id = "txtCountry" })
+        </dd>
+    </dl>
+    <p>
+        @Html.HiddenFor(model => model.Token, new { id = "hdnToken" })
+        @Html.ActionLink("Process Payment", "Charge", null, new { id = "btnCharge" })
+    </p>
+    @section Scripts {
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+        <script type="text/javascript">
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("btnCharge");
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+            
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        $('document').ready(function() {
+            Stripe.setPublishableKey('pk_test_0DFsUvrJl29AxFJjINjC6EVu');
+
+            $('#btnCharge').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                Stripe.card.createToken({
+                    number: $('#txtCardNumber').val(),
+                    cvc: $('#txtCvc').val(),
+                    exp_month: $('#txtExpiryMonth').val(),
+                    exp_year: $('#txtExpiryYear').val()
+                }, stripeResponseHandler);
+            });
+
+            function stripeResponseHandler(status, response) {
+                var $form = $('#frmCharge');
+
+                if (response.error) {
+                    // Show the errors on the form
+                    modal.style.display = "none";
+                    alert(response.error.message);
+                } else {
+                    modal.style.display = "none";
+                    // response contains id and card, which contains additional card details
+                    var token = response.id;
+                    // Insert the token into the form so it gets submitted to the server
+                    $('#hdnToken').val(token);
+                    // and submit
+                    $form.get(0).submit();
+                }
+            }
+        });
+        </script>
+    }
+}
