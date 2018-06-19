@@ -1,4 +1,5 @@
-﻿using CSCAssignment.Models;
+﻿using CSCAssignment.Filters;
+using CSCAssignment.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace CSCAssignment.Controllers
         static readonly TalentRepository repository = new TalentRepository();
 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        
+        [RequireHttps]
         [HttpGet]
         [Route("api/talents")]
         public IEnumerable<Talent> GetAllTalents()
