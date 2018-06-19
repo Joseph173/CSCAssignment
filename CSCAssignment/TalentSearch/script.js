@@ -1,10 +1,10 @@
 $('#search').keyup(function () {
     //get data from json file
-    var urlForJson = "data.json";
+    //var urlForJson = "data.json";
 
 
     //get data from Restful web Service in development environment
-    //var urlForJson = "http://localhost:9000/api/talents";
+    var urlForJson = "http://localhost:55905/api/talents";
 
     //get data from Restful web Service in production environment
     //var urlForJson= "http://csc123.azurewebsites.net/api/talents";
