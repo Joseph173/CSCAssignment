@@ -14,15 +14,14 @@ namespace CSCAssignment.Controllers
         static readonly IProductRepository repository = new ProductRepository();
         [HttpGet]
         [Route("api/v2/products")]
-        public IEnumerable<Product> GetAllProducts() //get all
+        public IEnumerable<Product> GetAllProducts()
         {
             return repository.GetAll();
 
         }
-        //GET , POST, PUT , DELETE
         [HttpGet]
         [Route("api/v2/products/{id:int}", Name = "getProductById")]
-        public HttpResponseMessage GetProduct(int id) //get by id, changed to HttpResponseMessage to return message when error encounter.
+        public HttpResponseMessage GetProduct(int id) //change from Product to HttpResponseMessage to include error messages
         {
             Product item = repository.Get(id);
 
@@ -38,21 +37,18 @@ namespace CSCAssignment.Controllers
             return response;
 
         }
-        //returns products based on category
         [HttpGet]
         [Route("api/v2/products")]
-        //http://localhost:9000/api/v2/products/category?category=3
-        public IEnumerable<Product> GetProductsByCategory(string category) //get by category
+        public IEnumerable<Product> GetProductsByCategory(string category)
         {
             return repository.GetAll().Where(
                 p => string.Equals(p.Category, category, StringComparison.OrdinalIgnoreCase));
 
         }
-        //Post
         [ValidateModel]
         [HttpPost]
         [Route("api/v2/products")]
-        public HttpResponseMessage PostProduct(Product item) //create product
+        public HttpResponseMessage PostProduct(Product item)
         {
 
             if (ModelState.IsValid)
@@ -68,8 +64,6 @@ namespace CSCAssignment.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
         }
-
-        //Put
         [ValidateModel]
         [HttpPut]
         [Route("api/v2/products/{id:int}")]
@@ -88,8 +82,6 @@ namespace CSCAssignment.Controllers
             }
             return response;
         }
-
-        //delete
         [HttpDelete]
         [Route("api/v2/products/{id:int}")]
         public HttpResponseMessage DeleteProduct(int id)
