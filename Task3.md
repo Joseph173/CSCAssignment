@@ -45,7 +45,7 @@ I have added a string called ```special``` in one of the bio text to ensure that
 
 *[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task3/CSCAssignment/Controllers/TalentsController.cs#L25-L35)*
 
-![Get by id](Pictures/Task3/Get-by-id.png)
+![Get by id](Pictures/Task3/Get-by-Id.png)
 
 ### Post
 

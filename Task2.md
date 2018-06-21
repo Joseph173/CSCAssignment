@@ -45,7 +45,7 @@ A JavaScript MVVM library to help you create rich, dynamic user interfaces with 
 
 *[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task2/CSCAssignment/Controllers/AccountController.cs#L156-L192)*
 
-![Login](Pictures/Task2/login.png)
+![Login](Pictures/Task2/Login.png)
 
 ### Get bearer token
 

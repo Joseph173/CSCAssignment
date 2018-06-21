@@ -45,7 +45,7 @@ This package enables Cross-Origin Resource Sharing (CORS) in ASP.NET Web API
 
 *[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task1/CSCAssignment/Controllers/ProductsV1Controller.cs#L66-L77)*
 
-![V1 Get by Id](Pictures/Task1/V1-Get-by-id.png)
+![V1 Get by Id](Pictures/Task1/V1-Get-by-Id.png)
 
 ---
 
@@ -55,19 +55,19 @@ This package enables Cross-Origin Resource Sharing (CORS) in ASP.NET Web API
 
 *[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task1/CSCAssignment/Controllers/ProductsV2Controller.cs#L15-L21)*
 
-![V2 Get](Pictures/Task1/V2-get.png)
+![V2 Get](Pictures/Task1/V2-Get.png)
 
 #### Get by id
 
 *[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task1/CSCAssignment/Controllers/ProductsV2Controller.cs#L22-L39)*
 
-![V2 Get by Id](Pictures/Task1/V2-Get-by-id.png)
+![V2 Get by Id](Pictures/Task1/V2-Get-by-Id.png)
 
 #### Get by category
 
 *[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task1/CSCAssignment/Controllers/ProductsV2Controller.cs#L40-L47)*
 
-![V2 Get by category](Pictures/Task1/V2-Get-by-cat.png)
+![V2 Get by category](Pictures/Task1/V2-Get-by-Cat.png)
 
 #### Post
 
