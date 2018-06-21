@@ -81,9 +81,20 @@ namespace CSCAssignment.Controllers
 
         [HttpDelete]
         [Route("api/talents/{id:int}")]
-        public void DeleteTalent(int id)
+        public HttpResponseMessage DeleteTalent(int id)
         {
-            repository.Remove(id);
+            Talent talent = repository.Get(id);
+            HttpResponseMessage response = null;
+            if (talent == null)
+            {
+                response = Request.CreateResponse(HttpStatusCode.NotFound, "Invalid id. Invalid delete request.");
+            }
+            else
+            {
+                repository.Remove(id);
+                response = Request.CreateResponse<Talent>(HttpStatusCode.OK, talent);
+            }
+            return response;
         }
 
 
