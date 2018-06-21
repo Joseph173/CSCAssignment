@@ -63,13 +63,19 @@ namespace CSCAssignment.Controllers
 
         [HttpPut]
         [Route("api/talents/{id:int}")]
-        public void PutTalent(int id, Talent talent)
+        public HttpResponseMessage PutTalent(int id, Talent talent)
         {
+            HttpResponseMessage response = null;
             talent.Id = id;
             if (!repository.Update(talent))
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                response = Request.CreateResponse(HttpStatusCode.NotFound, "Invalid id. Invalid update request.");
             }
+            else
+            {
+                response = Request.CreateResponse<Talent>(HttpStatusCode.OK, talent);
+            }
+            return response;
         }
 
 
