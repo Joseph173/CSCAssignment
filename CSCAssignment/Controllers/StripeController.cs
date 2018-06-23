@@ -35,7 +35,7 @@ namespace CSCAssignment.Controllers
             var chargeId = await ProcessPayment(model);
             // You should do something with the chargeId --> Persist it maybe?
 
-            return View("Success");
+            return View(chargeId);
         }
 
         private static async Task<string> ProcessPayment(StripeChargeModel model)
