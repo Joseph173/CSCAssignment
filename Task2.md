@@ -92,4 +92,5 @@ Use the access/bearer token retrieved from the browser for use in postman.
 
 ![SQL Query](Pictures/Task2/SQL-Query-list-users.png)
 
-
+---
+©2018 [francisyzy](http://francisyzy.github.io) - [Github](https://github.com/francisyzy)

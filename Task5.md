@@ -89,3 +89,5 @@ Browser->User: Display Success Page
 
 ![Loading](Pictures/Task5/Loading.png)
 
+---
+©2018 [francisyzy](http://francisyzy.github.io) - [Github](https://github.com/francisyzy)

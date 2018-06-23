@@ -147,3 +147,6 @@ Browser->User: return XML file with newly created Product
 ![V3 Post](Pictures/Task1/V3-Post.png)
 
 //Did not screenshot the test conducted on the other crud operations but they should be similar to V2 due to similar implementations but with different return messages.
+
+---
+©2018 [francisyzy](http://francisyzy.github.io) - [Github](https://github.com/francisyzy)

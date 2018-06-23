@@ -76,3 +76,6 @@ I have added a string called ```special``` in one of the bio text to ensure that
 *[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task3/CSCAssignment/TalentSearch/script.js#L63-L64)*
 
 ![Error](Pictures/Task3/Error-With-Retry.png)
+
+---
+©2018 [francisyzy](http://francisyzy.github.io) - [Github](https://github.com/francisyzy)

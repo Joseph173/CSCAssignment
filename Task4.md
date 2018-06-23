@@ -47,3 +47,5 @@ This package enables Cross-Origin Resource Sharing (CORS) in ASP.NET Web API
 
 ![Postman-https](Pictures/Task4/Postman-https.png)
 
+---
+©2018 [francisyzy](http://francisyzy.github.io) - [Github](https://github.com/francisyzy)

@@ -22,3 +22,6 @@
     - [AWS Deliverables](Task5.md#aws-deliverables)
     - [Code](Task5.md#code)
     - [Testing](Task5.md#testing)
+
+---
+©2018 [francisyzy](http://francisyzy.github.io) - [Github](https://github.com/francisyzy)
