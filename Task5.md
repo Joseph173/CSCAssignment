@@ -2,11 +2,11 @@
 
 HTML version available [here](https://francisyzy.github.io/CSCAssignment)
 
-- [Task 1](task1.md#task-1)
-- [Task 2](task2.md#task-2)
-- [Task 3](task3.md#task-3)
-- [Task 4](task4.md#task-4)
-- [Task 5](task5.md#task-5)
+- [Task 1](Task1.md#task-1)
+- [Task 2](Task2.md#task-2)
+- [Task 3](Task3.md#task-3)
+- [Task 4](Task4.md#task-4)
+- [Task 5](Task5.md#task-5)
 
 # Task 5
 
