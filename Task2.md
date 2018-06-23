@@ -21,6 +21,33 @@ A JavaScript MVVM library to help you create rich, dynamic user interfaces with 
 [Nuget package manager](https://www.nuget.org/packages/knockoutjs)
 ``` Install-Package knockoutjs ```
 
+## Sequence Diagram
+
+![Sequence Diagram](Pictures/Task2/Sequence.svg)
+
+Code to generate sequence diagram using [js-sequence-diagrams](https://bramp.github.io/js-sequence-diagrams/)
+```Sequence
+Title: Task 2
+User->Browser: Visits https://localhost:44350/
+Browser->HomeController: Request home page
+HomeController->Browser: return Homepage
+Browser->User: Display home page
+User->Browser: Create account and enter details
+Browser->AccountController: [HttpPost]Register
+Note over AccountController: Validate model
+AccountController->AccountController: UserManager.CreateAsync
+AccountController->Browser: return success message
+Browser->User: display success message
+User->Browser: Login
+Browser->AccountController: [HttpPost]Login
+AccountController->Browser: Returns Token
+Browser->User: display success message
+User->Browser: Click Call API Button
+Browser->ValuesController: [HttpGet]Get
+ValuesController->Browser: return String with username
+Browser->User: Display String
+```
+
 ## Testing
 
 ### Not authorized
