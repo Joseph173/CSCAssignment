@@ -31,9 +31,40 @@ This package enables Cross-Origin Resource Sharing (CORS) in ASP.NET Web API
 
 ![V1 Sequence Diagram](Pictures/Task1/V1-Sequence.svg)
 
+Code to generate sequence diagram using [js-sequence-diagrams](https://bramp.github.io/js-sequence-diagrams/)
+```Sequence
+Title: ProductsV1 APIs
+User->Browser: Visits http://localhost:55905/API/V1/Products
+Browser->ProductsV1Controller: [HttpGet]GetAllProducts
+ProductsV1Controller->Browser: return Products
+Browser->User: return XML file with all Products
+User->Browser: Visits http://localhost:55905/API/V1/Products/2
+Browser->ProductsV1Controller: [HttpGet]GetProduct
+ProductsV1Controller->Browser: return Product
+Browser->User: return XML file with requested Product
+```
+
 ### V2 APIs
 
 ![V2 Sequence Diagram](Pictures/Task1/V2-Sequence.svg)
+
+Code to generate sequence diagram using [js-sequence-diagrams](https://bramp.github.io/js-sequence-diagrams/)
+```Sequence
+Title: ProductsV2 APIs
+User->Browser: Visits http://localhost:55905/API/V2/Products
+Browser->ProductsV2Controller: [HttpGet]GetAllProducts
+ProductsV2Controller->Browser: return Products
+Browser->User: return XML file with all Products
+User->Browser: Visits http://localhost:55905/API/V2/Products/2
+Browser->ProductsV2Controller: [HttpGet]GetProduct
+ProductsV2Controller->Browser: return Product
+Browser->User: return XML file with requested Product
+User->Browser: Post http://localhost:55905/API/V2/Products/
+Browser->ProductsV2Controller: [HttpPost]PostProduct
+Note over ProductsV2Controller: ValidateModel
+ProductsV2Controller->Browser: return new Product
+Browser->User: return XML file with newly created Product
+```
 
 ## Testing
 
