@@ -10,7 +10,7 @@ $('#search').keyup(function () {
     //var urlForJson= "http://csc123.azurewebsites.net/api/talents";
 
     //Url for the Cloud image hosting
-    var urlForCloudImage = "http://res.cloudinary.com/doh5kivfn/image/upload/v1460006156/talents/";
+    var urlForCloudImage = "https://s3-ap-southeast-1.amazonaws.com/csc-p1625950/";
 
     var searchField = $('#search').val();
     var myExp = new RegExp(searchField, "i");
