@@ -65,3 +65,14 @@ I have added a string called ```special``` in one of the bio text to ensure that
 
 ![Delete](Pictures/Task3/Delete.png)
 
+### Image Stored in S3 Bucket
+
+*[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task3/CSCAssignment/TalentSearch/script.js#L33)*
+
+![S3Bucket](Pictures/Task3/Using-S3Bucket.png)
+
+### Error
+
+*[Link to code](https://github.com/francisyzy/CSCAssignment/blob/Task3/CSCAssignment/TalentSearch/script.js#L63-L64)*
+
+![Error](Pictures/Task3/Error-With-Retry.png)
