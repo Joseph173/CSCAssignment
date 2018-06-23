@@ -25,6 +25,16 @@ This package enables Cross-Origin Resource Sharing (CORS) in ASP.NET Web API
 [Nuget package manager](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors)
 ``` Install-Package Microsoft.AspNet.WebApi.Cors ```
 
+## Sequence Diagram
+
+### V1 APIs
+
+![V1 Sequence Diagram](Pictures/Task1/V1-Sequence.svg)
+
+### V2 APIs
+
+![V2 Sequence Diagram](Pictures/Task1/V2-Sequence.svg)
+
 ## Testing
 
 ### V1 APIs
