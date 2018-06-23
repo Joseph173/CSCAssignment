@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -6,13 +6,25 @@
 	<link rel="stylesheet" href="mystyle.css" />
 </head>
 <body>
-<div id="searcharea">
-	<label for="search">live search</label>
-	<p>Enter the name or info about a speaker</p>
-	<input type="search" name="search" id="search" placeholder="name or info" />
-</div>
-<div id="update"></div>
-<script src="jquery.js"></script>
-<script src="script.js"></script>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Error, please click retry</p>
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Retry</button>
+        </div>
+
+    </div>
+    <div id="searcharea">
+        <label for="search">live search</label>
+        <p>Enter the name or info about a speaker</p>
+        <input type="search" name="search" id="search" placeholder="name or info" />
+    </div>
+    <div id="update"></div>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
