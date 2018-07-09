@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "2246c1a1-8b99-4e0b-ad78-1bcfcc43b9ae",
+		"name": "CSC Task4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:55905/Api/talents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:55905/Api/talents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "55905",
+					"path": [
+						"Api",
+						"talents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44350/Api/talents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:44350/Api/talents",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"Api",
+						"talents"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

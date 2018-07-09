@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "881da89e-bd6d-4275-bf7b-f6d969b39e4e",
+		"name": "CSC Task2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "With Auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "0C8hUy8JmPpRTJfCi-ECiT3ZEUc5cU_E-mYG50_482Wy1VMTfFwZ0otHgb3IV6oDLShr5su1HfECLVltvBDQrVO1Z6wiYcK8K_mFuPIffFITy9LV393bjG2vU5B5JdxPbZABJNT4O0YYG9KotV7eKJ4yL6AEq6MfaZBUB2Zr2Ka6KKLWGEiNVYPZtQ1JFF_1xjZTFC_87bOAoUydT-qrzkhEAc2Hd9-8OLFuguz8fuHKWx9KW3gP1N8121RrknInEnGJNu2nAI_4cfSGeCkwFA1Zatgz3OH60xbkXeLlSwPRbu7pLIeNWfDyd_0DBCilWy5dEVRw2Pqy_BjXZOZtxsqnUiFz6JAnEG1xnQOEd1coGYnBxaRhzpNZJhOIzEMxDL21n22nczcbImFlLpGIN2jvXC4TKoUVgozoHfvfJEaDhpLE8mz7YEpZS_LptsL-eMwiW01EoD45WlZiLV4WlTyi2ND3LnvSuLSCGu7movs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:44350/api/values",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No Auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:44350/api/values",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"values"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
